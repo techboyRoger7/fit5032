@@ -7,20 +7,23 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" id="username" class="form-control" v-model="formData.username">                            
+                            <input type="text" id="username" class="form-control" v-model="formData.username" required>
                         </div>
                        <div class="col-md-6">
                             <label for="password" class="form-label">Password</label>
-                            <input type="text" id="password" class="form-control" v-model="formData.password">                    
+                            <input type="text" id="password" class="form-control" v-model="formData.password" minlength="4" maxlength="10" required>                    
                         </div>                        
                     </div>
-                    <div clas="row mb-3">
+                    <div class="row mb-3">
                         <div class="col-md-6">
-                            <div class="form-check"><label for="checkbox" class="form-label">Australian citizen?</label><input type="checkbox" id="isAustralian" class="form-check-input" v-model="formData.isAustralia"></div>
+                            <div class="form-check">
+                                <label for="checkbox" class="form-label">Australian citizen?</label>
+                                <input type="checkbox" id="isAustralian" class="form-check-input" v-model="formData.isAustralia" required/>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="gender" class="form-label">Gender</label>
-                            <select id="gender" class="form-select" v-model="formData.gender">
+                            <select id="gender" class="form-select" v-model="formData.gender" required>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="other">Other</option>
@@ -29,7 +32,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="reasonForLearning" class="form-label">Reason for joining</label>
-                        <textarea id="reasonForJoining" name="reasonForJoining" row="3" class="form-control" v-model="formData.reason"></textarea>                        
+                        <textarea id="reasonForJoining" name="reasonForJoining" row="3" class="form-control" v-model="formData.reason" maxlength="200"></textarea>                        
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
